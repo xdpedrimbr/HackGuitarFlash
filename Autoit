@@ -1,0 +1,76 @@
+HotKeySet("{1}", start)
+HotKeySet("{2}", stop)
+HotKeySet("{esc}", quit)
+
+Global $x[5]
+Global $z
+
+	$x[0] = 705 ;x do verde
+	$x[1] = 814 ;x do vermelho
+	$x[2] = 928 ;x do amarelo
+	$x[3] = 1037 ;x do azul
+	$x[4] = 1051 ;x do laranja
+	$linha = 782
+	
+	Global $x2[5]
+	Global $cor[5]
+	
+	$x2[0] = 744 
+	$x2[0] = 854
+	$x2[0] = 966 
+	$x2[0] = 1077
+	$x2[0] = 1089
+	$linha2 = 792
+	
+	$cor[0] = 0x009800 ;verde
+	$cor[1] = 0xFF0000 ;vermelho
+	$cor[2] = 0xF4F402 ;amarelo
+	$cor[3] = 0x0098FF ;azul
+	$cor[4] = 0xFF6500 ;laranja
+	
+	Send("{a down}")
+	Send("{s down}")
+	Send("{j down}")
+	Send("{k down}")
+	Send("{l down}")
+
+While True
+	If $z = 1 then
+		If(PixelGetColor($x[0], $linha2) <> $cor[0]) Then
+			Send("{a}")
+			Send("{a down}")
+		EndIf
+
+		If(PixelGetColor($x[1], $linha2) <> $cor[1]) Then
+			Send("{s}")
+			Send("{s down}")
+		EndIf
+
+		If(PixelGetColor($x[2], $linha2) <> $cor[2]) Then
+			Send("{j}")
+			Send("{j down}")
+		EndIf
+
+		If(PixelGetColor($x[3], $linha2) <> $cor[3]) Then
+			Send("{k}")
+			Send("{k down}")
+		EndIf
+
+		If(PixelGetColor($x[4], $linha2) <> $cor[4]) Then
+			Send("{l}")
+			Send("{l down}")
+		EndIf
+	EndIf
+WEnd
+
+Func start()
+	$z = 1
+EndFunc
+
+Func stop()
+	$z = 0
+EndFunc
+
+Func quit()
+	Exit
+EndFunc
