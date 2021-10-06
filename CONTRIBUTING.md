@@ -1,3 +1,3 @@
 # Contribuidores
-Pedro Henrique Gonçalves Teixeira
-Gabriel Ribeiro Bernardi
+1. Pedro Henrique Gonçalves Teixeira
+2. Gabriel Ribeiro Bernardi
